@@ -57,25 +57,61 @@ export default function Login({ token }) {
     }
 
     return (
-        <body>
+        <Layout>
             <Navbar />
-            <h1>Login</h1>
-                <div><b>Token:</b> {token.substring(0, 15)}...
-                <button onClick={copyText}> Copy token </button>
+            <div >
+                <div class=" flex justify-center mt-20">
+                    <div class="H-20 w-30 rounded overflow-hidden shadow-lg">
+                        <form class="bg-black rounded shadow-md rounded px-10 pt-15 pb-8 mb-15 ">
+                            <div class="mb-4">{loginForm()}</div>
+                            <div class="mb-6">
+                                <p class="text-slate-200">
+                                    <br></br>
+                                </p>
+                                {status}
+
+                                <div>
+
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button
+                                    class="bg-white text-black-200 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                    onClick={login}
+                                >
+                                    Sign In
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <br/>
-                <div>
-                    Status:  {status}
-                </div>
-                <br />
-                {loginForm()}
-                <div>
-                    <button onClick={login}>Login</button>
-                </div>
-        </body>
-            
-    )
+            </div>
+        </Layout>
+    );
 }
+
+//     return (
+//         <body>
+//             <Navbar />
+
+//             <h1>Login</h1>
+//                 <div><b>Token:</b> {token.substring(0, 15)}...
+//                 <button onClick={copyText}> Copy token </button>
+//                 </div>
+//                 <br/>
+//                 <div>
+//                     Status:  {status}
+//                 </div>
+//                 <br />
+//                 {loginForm()}
+//                 <div>
+//                     <button onClick={login}>Login</button>
+//                 </div>
+//         </body>
+
+//     )
+// }
 
 export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };
