@@ -1,3 +1,7 @@
+body{
+    color: rgb(0, 0, 0);
+}
+
 .container {
     min-height: 100vh;
     padding: 0 0.5rem;
@@ -19,9 +23,6 @@
       background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/intimate-rhythm-minimal-bass-guitar-portrait-on-black-background-nancy-jacobson.jpg");
   }
 
-body{
-    color: rgb(0, 0, 0);
-}
 
 .content {
     min-width: 25vw;
